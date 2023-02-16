@@ -5,7 +5,16 @@ let userSelection = [];
 let computerSelection = [];
 let round = 0;
 
+roundNumberText("-");
+roundTurnText("Press START");
+
+startButton.onclick = function () {
+  stateReset();
+  play();
+};
+
 function play() {
+  roundTurnText("Computer");
   disableUserSquare();
   let newSquare = getRandomSquare();
   computerSelection.push(newSquare);
@@ -21,11 +30,13 @@ function play() {
   });
 
   setTimeout(function () {
+    roundTurnText("Player");
     enableUserSquare();
   }, userTurnDelay);
 
   userSelection = [];
   round++;
+  roundNumberText(round);
 }
 
 function checkUserSelection(e) {
@@ -67,18 +78,23 @@ function highlightSquare(square) {
   square.style.opacity = "1";
   setTimeout(function () {
     square.style.opacity = "0.4";
-  }, 500);
+  }, 400);
 }
 
-function playSound(val) {
-  if (val.id == "square-r") {
-    audio[0].play();
-  } else if (val.id == "square-g") {
-    audio[1].play();
-  } else if (val.id == "square-b") {
-    audio[2].play();
+function playSound(element) {
+  const audio_1 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+  const audio_2 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+  const audio_3 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+  const audio_4 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+
+  if (element.id == "square-r") {
+    audio_1.play();
+  } else if (element.id == "square-g") {
+    audio_2.play();
+  } else if (element.id == "square-b") {
+    audio_3.play();
   } else {
-    audio[3].play();
+    audio_4.play();
   }
 }
 
@@ -89,11 +105,17 @@ function stateReset() {
 }
 
 function loseGame() {
+  document.querySelector(".audio-error").play();
   console.log("you lose");
   disableUserSquare();
 }
 
-startButton.onclick = function () {
-  stateReset();
-  play();
-};
+function roundNumberText(round) {
+  document.querySelector(".round-num-text").textContent = round;
+}
+
+function roundTurnText(turn) {
+  document.querySelector(".round-turn-text").textContent = turn;
+}
+
+
