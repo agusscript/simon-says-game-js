@@ -75,6 +75,7 @@ function getRandomSquare() {
 }
 
 function highlightSquare(square) {
+  square.style.filter = "brightness(180%)";
   square.style.opacity = "1";
   setTimeout(function () {
     square.style.opacity = "0.4";
@@ -106,7 +107,7 @@ function stateReset() {
 
 function loseGame() {
   document.querySelector(".audio-error").play();
-  console.log("you lose");
+  roundTurnText("Game over");
   disableUserSquare();
 }
 
