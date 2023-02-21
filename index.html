@@ -5,12 +5,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/game.png">
   <title>Simon says</title>
   <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
+  <header>
+    <span><span class="letter">S</span>imon</span>
+    <span><span class="letter">S</span>ays</span>
+    <div>
+      <span><span class="letter">G</span>ame</span>
+      <span><span class="letter">J</span>s</span>
+    </div>
+  </header>
+  <main>
 
+    <section class="squares-container">
+      <div id="square-r" class="square">
+      </div>
+      <div id="square-g" class="square">
+      </div>
+      <div id="square-b" class="square">
+      </div>
+      <div id="square-y" class="square">
+      </div>
+      <audio class="audio-error" src="assets/error.wav"></audio>
+    </section>
+
+    <div class="start-btn-container">
+      <button id="start">Start</button>
+    </div>
+
+    <div class="round-info-container">
+      <div>
+        <p for="round-turn-text">Turn</p><span class="round-turn-text"></span>
+      </div>
+      <div>
+        <p for="round-num-text">Round</p><span class="round-num-text"></span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <p>Coded by <a href="https://github.com/agusscript" target="_blank">Agustin Sanchez</a></p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 
 </html>
