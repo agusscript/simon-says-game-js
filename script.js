@@ -14,6 +14,7 @@ startButton.onclick = function () {
 };
 
 function play() {
+  document.querySelector(".round-turn-text").style.color = "rgb(0, 245, 0)";
   roundTurnText("Computer");
   disableUserSquare();
   let newSquare = getRandomSquare();
@@ -109,6 +110,8 @@ function stateReset() {
 
 function loseGame() {
   document.querySelector(".audio-error").play();
+  document.querySelector(".round-turn-text").style.color = "red";
+  document.querySelector(".round-turn-text").style.textTransform = "uppercase";
   roundTurnText("Game over");
   disableUserSquare();
 }
