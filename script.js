@@ -22,7 +22,7 @@ function play() {
   const userTurnDelay = (computerSelection.length + 1) * 1000;
 
   computerSelection.forEach(function (square, index) {
-    const delay = (index + 1) * 1000;
+    const delay = (index + 1) * 900;
     setTimeout(function () {
       highlightSquare(square);
       playSound(square);
@@ -83,19 +83,21 @@ function highlightSquare(square) {
 }
 
 function playSound(element) {
-  const audio_1 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
-  const audio_2 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
-  const audio_3 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
-  const audio_4 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+  const audio = [
+    new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+    new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+    new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+    new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
+  ];
 
   if (element.id == "square-r") {
-    audio_1.play();
+    audio[0].play();
   } else if (element.id == "square-g") {
-    audio_2.play();
+    audio[1].play();
   } else if (element.id == "square-b") {
-    audio_3.play();
+    audio[2].play();
   } else {
-    audio_4.play();
+    audio[3].play();
   }
 }
 
