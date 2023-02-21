@@ -109,8 +109,7 @@ main {
   div:nth-child(2) {
     width: 100px;
     color: red;
-    font-family: 2rem;
-    font-weight: 600;
+    font-weight: 1000;
   }
 
   p {
@@ -191,7 +190,7 @@ main {
   }
 
   #start:hover {
-    opacity: 0.8;
+    background-color: rgb(66, 66, 66);
     cursor: pointer;
   }
 
@@ -202,7 +201,10 @@ main {
 
 footer {
   position: absolute;
+  width: 200px;
   margin: 0.9rem;
   bottom: 0;
   right: 0;
 }
+
+@import "media-queries";
