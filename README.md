@@ -11,12 +11,12 @@ The classic memory game Simon Says - Made with JavaScript.
 ![](assets/images/Simon-says-mobile.png)
 
 
-### Link
+## Link
 
-- [Live site](https://simon-says-game-js.vercel.app/)
+- [You can play a demo here](https://simon-says-game-js.vercel.app/)
 
 
-### Built with
+## Built with
 
 <p>
  <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">
