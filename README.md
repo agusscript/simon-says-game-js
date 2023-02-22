@@ -1,4 +1,6 @@
-# The classic game Simon Says - Made with JavaScript
+# Simon Says
+
+The classic memory game Simon Says - Made with JavaScript.
 
 - Desktop view
 
