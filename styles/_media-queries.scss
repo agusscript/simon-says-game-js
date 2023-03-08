@@ -148,3 +148,9 @@
     }
   }
 }
+
+@media (max-height: 500px) {
+  footer {
+    display: none;
+  }
+}
